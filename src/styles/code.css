@@ -1,0 +1,33 @@
+pre:has(code) {
+	padding-top: 20px;
+}
+
+pre:has(code)::before {
+	content: attr(data-language);
+	position: absolute;
+	translate: 10px -15px;
+	font-family: Inter;
+	scale: 0.87;
+	opacity: 0.8;
+}
+
+code {
+	counter-reset: lines;
+}
+
+pre code {
+	filter: saturate(1.15);
+}
+
+code .ec-line {
+	counter-increment: lines;
+}
+
+code .ec-line::before {
+	content: counter(lines);
+	display: inline-block;
+	width: 48px;
+	padding-left: 15px;
+	opacity: 0.5;
+	border-right: 1px solid rgba(255, 255, 255, 0.11);
+}

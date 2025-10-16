@@ -1,0 +1,118 @@
+{
+	"scopeName": "source.cranberry",
+	"name": "cranberry",
+	"patterns": [
+		{
+			"name": "comment.line.number-sign.cranberry",
+			"match": "(?<!\\S)#.*$"
+		},
+
+		{
+			"name": "entity.name.class.cranberry",
+			"match": "\\b(?:number|string|bool|dict|list|List|Dict)\\b"
+		},
+
+		{
+			"name": "keyword.control.cranberry",
+			"match": "\\b(?:fn|class|include|loop|namespace|constructor|using|let|if|else|for|while|return|in|break|as|out|continue|switch)\\b"
+		},
+
+		{
+			"name": "meta.function-call.cranberry",
+			"match": "\\b([A-Za-z_][A-Za-z0-9_]*?)\\s*(?=\\()"
+		},
+
+		{
+			"name": "entity.name.class",
+			"match": "[A-Z]+[A-z_a-z0-9]*"
+		},
+
+		{
+			"name": "constant.numeric.cranberry",
+			"match": "\\@|\\.\\.|\\b0x[0-9A-Fa-f]+\\b|\\b\\d+\\.\\d+\\b|\\b\\d+\\b"
+		},
+
+		{
+			"name": "string.quoted.interpolated.cranberry",
+			"begin": "(\\$)\"",
+			"beginCaptures": {
+				"1": { "name": "constant.numeric.cranberry" }
+			},
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.cranberry",
+					"match": "\\\\."
+				},
+				{
+					"name": "variable.interpolated.cranberry",
+					"begin": "\\{",
+					"end": "\\}",
+					"patterns": [
+						{
+							"name": "constant.numeric.cranberry",
+							"match": "\\b0x[0-9A-Fa-f]+\\b|\\b\\d+\\.\\d+\\b|\\b\\d+\\b"
+						},
+						{
+							"name": "entity.name.function.call.cranberry",
+							"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\s*(?=\\()"
+						},
+						{
+							"name": "keyword.control.cranberry",
+							"match": "\\b(?:fn|let|if|else|for|while|return|in|break|continue|switch|case|default)\\b"
+						},
+						{
+							"name": "keyword.operator.cranberry",
+							"match": "[+\\-*/%=<>!&|:^~]+"
+						},
+						{
+							"name": "punctuation.separator.brackets.cranberry",
+							"match": "[(){}\\[\\],.;]"
+						}
+					]
+				}
+			]
+		},
+
+		{
+			"name": "constant.language.boolean.cranberry",
+			"match": "\\b(?:true|false|nil|self)\\b"
+		},
+
+		{
+			"name": "string.quoted.double.cranberry",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.cranberry",
+					"match": "\\\\."
+				}
+			]
+		},
+
+		{
+			"name": "string.quoted.single.cranberry",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.cranberry",
+					"match": "\\\\."
+				}
+			]
+		},
+
+		{
+			"name": "keyword.operator.cranberry",
+			"match": "[+\\-*/%=<>?!&|:^~]+"
+		},
+
+		{
+			"name": "punctuation.separator.brackets.cranberry",
+			"match": "[(){}\\[\\],.;]"
+		},
+
+		{ "name": "punctuation.operator.at.cranberry", "match": "@" }
+	]
+}
