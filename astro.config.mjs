@@ -5,6 +5,7 @@ import { astroExpressiveCode } from '@astrojs/starlight/expressive-code';
 
 // https://astro.build/config
 export default defineConfig({
+	base: '/Cranberry-Lang/',
 	integrations: [
 		starlight({
 			title: 'Cranberry',
