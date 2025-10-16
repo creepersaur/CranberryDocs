@@ -4,8 +4,8 @@ import starlight from '@astrojs/starlight';
 
 
 export default defineConfig({
-	base: '/CranberryDocs',
-	site: 'https://creepersaur.github.io',
+	base: '/CranberryDocs/',
+	site: 'https://creepersaur.github.io/',
 
 	integrations: [
 		starlight({
