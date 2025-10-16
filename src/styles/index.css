@@ -3,7 +3,7 @@
 }
 
 
-body {
+body:has(.hero.astro-jbfsktt5) {
 	content: '';
 	width: 100%;
 	height: 100%;
