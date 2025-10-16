@@ -15,6 +15,7 @@ export default defineConfig({
 				// Relative path to your custom CSS file
 				'./src/styles/app.css',
 				'./src/styles/code.css',
+				'./src/styles/index.css',
 			],
 			logo: {
 				src: './src/assets/Cranberry_highres.svg'
