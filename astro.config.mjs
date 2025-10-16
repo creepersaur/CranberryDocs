@@ -1,11 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import { astroExpressiveCode } from '@astrojs/starlight/expressive-code';
 
 // https://astro.build/config
 export default defineConfig({
-	base: '/Cranberry-Lang/',
+	base: '/CranberryDocs/',
 	integrations: [
 		starlight({
 			title: 'Cranberry',

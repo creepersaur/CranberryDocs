@@ -1,1 +1,1 @@
-npx gh-pages -d dist -r https://github.com/USERNAME/my-docs.git
+npx gh-pages -d docs -r https://github.com/creepersaur/Cranberry-Lang.git
