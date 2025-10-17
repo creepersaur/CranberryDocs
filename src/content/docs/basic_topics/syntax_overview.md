@@ -74,6 +74,16 @@ Then use braces inside the string for an expression.
 let x = 10
 
 println($"value of x is {x}")
+# prints `value of x is 10`
+```
+
+Optionally you can use the `format()` function which takes a string and replaces the `{}` braces with the argument in order.
+
+```cranberry
+let name = "John"
+let greeting = format("Hello, {}", name)
+
+print(greeting) # prints `Hello, John`
 ```
 
 ---
@@ -82,11 +92,12 @@ println($"value of x is {x}")
 
 Cranberry has a few syntax conventions that you can adhere to. These are not mandatory but can function as a style guide.
 
-1. Cranberry uses `PascalCase` for classes, namespaces, and functions.
-2. Builtin functions, variable names, etc. use `snake_case`.
+1. Cranberry uses `PascalCase` for classes and namespaces.
+2. Functions, variable names, etc. use `snake_case`.
 3. Using directives for namespaces must always go at the top of the file.
 4. Classes using object creation should use `self` as the name for the first parameter of object methods.
-5. Try leaving extra lines and using tabs to improve code clarity.
+5. Try leaving extra lines and using indents to improve code clarity.
+6. Use tabs instead of spaces unless they improve code clarity. (Most IDEs let you change tab sizes anyways.)
 6. Don't use semicolons, you probably will never use them anyway.
 
 ### Syntax Example
@@ -98,7 +109,7 @@ namespace Hello;
 class FooBar {
 	constructor(self) => self.num = 5
 
-	fn MyFunction(self) {
+	fn my_function(self) {
 		# This is a comment
 		self.num = 10
 	}

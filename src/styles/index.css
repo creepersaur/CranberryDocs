@@ -1,4 +1,4 @@
-.content-panel.astro-7nkwcw3z:has(.hero.astro-jbfsktt5) {
+.page:has(.hero.astro-jbfsktt5) {
 	background: radial-gradient(circle at 50% 50%, rgba(255, 94, 94, 0.15) 0%, rgba(0, 0, 0, 0) 80%);
 }
 

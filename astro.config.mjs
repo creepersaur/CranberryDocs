@@ -36,9 +36,8 @@ export default defineConfig({
 					label: 'Getting Started',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Installation', slug: 'getting_started/example' },
-						{ label: 'First Project', slug: 'getting_started/example' },
-						{ label: 'Hello Cranberry', slug: 'getting_started/example' }
+						{ label: 'Installation', slug: 'getting_started/installation' },
+						{ label: 'Hello Cranberry', slug: 'getting_started/hello_cranberry' },
 					],
 				},
 				{
@@ -46,6 +45,7 @@ export default defineConfig({
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ slug: 'basic_topics/syntax_overview' },
+						{ slug: 'basic_topics/printing' },
 						{ slug: 'basic_topics/variables' },
 						{ slug: 'basic_topics/blocks' },
 						{ slug: 'basic_topics/if_statements' },

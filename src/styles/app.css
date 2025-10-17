@@ -5,6 +5,11 @@
 
 .sl-markdown-content a[href] {
 	color: rgb(255, 60, 70);
+	transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.sl-markdown-content a[href]:hover {
+	color: rgb(255, 100, 105);
 }
 
 .astro-u2l5gyhi > .astro-u2l5gyhi, .astro-u2l5gyhi {

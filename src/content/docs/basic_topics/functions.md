@@ -8,7 +8,7 @@ A function is a block of code that can be called any time multiple times. These 
 Define a function using the `fn` keyword followed by its name, parenthesese, and a block. (Optional parameters can go inside the parenthesese).
 
 ```cranberry
-fn MyFunction() {
+fn my_function() {
 	print("foo")
 	print("bar")
 }
@@ -17,21 +17,21 @@ fn MyFunction() {
 Call a function to run it by writing its name, followed by parenthese and any arguments it takes.
 
 ```cranberry
-MyFunction()
+my_function()
 ```
 
 ### Example
 
-Here's a simple `Add()` function that takes 2 numbers and prints their added output:
+Here's a simple `add()` function that takes 2 numbers and prints their added output:
 
 ```cranberry
-fn Add(a, b) {
+fn add(a, b) {
 	print(a + b)
 }
 
-Add(1, 3)
-Add(6, 7)
-Add(12, 51)
+add(1, 3)
+add(6, 7)
+add(12, 51)
 ```
 
 ## Returning Values
@@ -39,11 +39,11 @@ Add(12, 51)
 Use the `return` keyword (or `out`) to stop a function and optionally return a value.
 
 ```cranberry
-fn TimesFive(num) {
+fn times_five(num) {
 	return num * 5
 }
 
-print(TimesFive(6))  # prints 30
+print(times_five(6))  # prints 30
 ```
 
 ## Lambda Functions
@@ -56,6 +56,10 @@ Use `fn` followed by parenthese + arguments (no function name) and a block.
 let x = fn() {
 	print("yes")
 }
+
+# Or make it inline
+
+let x = fn() => print("yes")
 ```
 
 You can call `x()` to run the function or pass it to a separate function. This can be useful for creating callbacks and assigning functions to certain things at runtime.
@@ -65,5 +69,7 @@ You can call `x()` to run the function or pass it to a separate function. This c
 If there was a button object like the one below, we can make a function that prints `clicked!` as a callback. (And also make it a one liner arrow function)
 
 ```cranberry
-button.OnClick(fn() => print("clicked!"))
+button.on_click(
+	fn() => print("clicked!")
+)
 ```
