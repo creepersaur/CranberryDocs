@@ -68,3 +68,18 @@ let name = "John"
 
 for i in name => println(i)
 ```
+
+## Break Statement
+
+The `break` keyword allows you to stop any loop at any time.
+Optionally you can also return a value using a break by passing the value.
+
+```cranberry
+let x = 0
+
+let my_variable = while x < 10 {
+	break 32
+}
+
+println(my_variable) # prints 32
+```

@@ -150,12 +150,12 @@ using Std::IO
 let counter = 0
 
 loop {
-	IO.clear()
-	println("Use the left and right arrow keys to change the counter")
-	println($"Counter: {counter}")
+    IO.clear()
+    println("Use the left and right arrow keys to change the counter")
+    println($"Counter: {counter}")
 
-	let key = IO.ReadKey(true)    # `true` means don't send key to output
-	if key == "left" => counter--
-	if key == "right" => counter++
+    let key = IO.read_key(true)    # `true` means don't send key to output
+    if key == "LeftArrow" => counter--
+    if key == "RightArrow" => counter++
 }
 ```

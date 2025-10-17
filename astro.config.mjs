@@ -55,6 +55,8 @@ export default defineConfig({
 						{ slug: 'basic_topics/classes' },
 						{ slug: 'basic_topics/multi_source' },
 						{ slug: 'basic_topics/namespaces' },
+						{ slug: 'basic_topics/switch' },
+						{ slug: 'basic_topics/out' },
 					],
 				},
 			],
