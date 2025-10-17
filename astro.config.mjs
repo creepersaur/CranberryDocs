@@ -2,7 +2,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-
 export default defineConfig({
 	base: '/CranberryDocs/',
 	site: 'https://creepersaur.github.io/',
@@ -36,8 +35,9 @@ export default defineConfig({
 					label: 'Getting Started',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Installation', slug: 'getting_started/installation' },
-						{ label: 'Hello Cranberry', slug: 'getting_started/hello_cranberry' },
+						{ slug: 'getting_started/installation' },
+						{ slug: 'getting_started/dependencies' },
+						{ slug: 'getting_started/hello_cranberry' },
 					],
 				},
 				{
@@ -52,6 +52,9 @@ export default defineConfig({
 						{ slug: 'basic_topics/loops' },
 						{ slug: 'basic_topics/ranges' },
 						{ slug: 'basic_topics/functions' },
+						{ slug: 'basic_topics/classes' },
+						{ slug: 'basic_topics/multi_source' },
+						{ slug: 'basic_topics/namespaces' },
 					],
 				},
 			],

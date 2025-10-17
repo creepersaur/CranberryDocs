@@ -24,12 +24,4 @@ description: Installation guide for Cranberry.
 
 6. When you're done click Apply and OK.
 
-## Checking if Install is Successful
-
-Press `Win + R` and type in "cmd". And inside of the command prompt write.
-
-```bash
-cranberry
-```
-
-If everything is correct then you should see the Cranberry help splash.
+##### Please install all dependencies given in the next part

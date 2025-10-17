@@ -14,17 +14,18 @@
 
 		{
 			"name": "keyword.control.cranberry",
-			"match": "\\b(?:fn|class|include|loop|namespace|constructor|using|let|if|else|for|while|return|in|break|as|out|continue|switch)\\b"
+			"match": "\\b(?:fn|class|include|const|loop|namespace|constructor|using|let|if|else|for|while|return|in|break|as|out|continue|switch)\\b"
+		},
+
+
+		{
+			"name": "entity.name.class",
+			"match": "[A-Z]+[A-z_a-z0-9]*"
 		},
 
 		{
 			"name": "meta.function-call.cranberry",
 			"match": "\\b([A-Za-z_][A-Za-z0-9_]*?)\\s*(?=\\()"
-		},
-
-		{
-			"name": "entity.name.class",
-			"match": "[A-Z]+[A-z_a-z0-9]*"
 		},
 
 		{
