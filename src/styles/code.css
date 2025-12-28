@@ -6,7 +6,7 @@ pre:has(code)::before {
 	content: attr(data-language);
 	position: absolute;
 	translate: 10px -15px;
-	font-family: Inter;
+	font-family: Inter, Inter 24pt;
 	scale: 0.87;
 	opacity: 0.8;
 }

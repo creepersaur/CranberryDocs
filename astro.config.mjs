@@ -1,62 +1,76 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
 
 export default defineConfig({
-	base: '/CranberryDocs/',
-	site: 'https://creepersaur.github.io/',
+	base: "/CranberryDocs/",
+	site: "https://creepersaur.github.io/",
 
 	integrations: [
 		starlight({
-			title: 'Cranberry',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/creepersaur/cranberry-lang' }],
+			title: "Cranberry",
+			social: [
+				{
+					icon: "github",
+					label: "GitHub",
+					href: "https://github.com/creepersaur/cranberry-lang",
+				},
+			],
 			customCss: [
 				// Relative path to your custom CSS file
-				'./src/styles/app.css',
-				'./src/styles/code.css',
-				'./src/styles/index.css',
+				"./src/styles/app.css",
+				"./src/styles/code.css",
+				"./src/styles/index.css",
 			],
 			logo: {
-				src: './src/assets/Cranberry_highres.svg'
+				src: "./src/assets/Cranberry_highres.svg",
 			},
 			expressiveCode: {
 				tabWidth: 4,
 				styleOverrides: {
-					borderRadius: '0.3rem',
+					borderRadius: "0.3rem",
 				},
 				shiki: {
 					langs: [
-						await import('./src/shiki/cranberry.tmLanguage.json')
-					]
+						await import("./src/shiki/cranberry.tmLanguage.json"),
+					],
 				},
 			},
 			sidebar: [
 				{
-					label: 'Getting Started',
+					label: "Getting Started",
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ slug: 'getting_started/installation' },
-						{ slug: 'getting_started/dependencies' },
-						{ slug: 'getting_started/hello_cranberry' },
+						{ slug: "getting_started/installation" },
+						{ slug: "getting_started/dependencies" },
+						{ slug: "getting_started/hello_cranberry" },
 					],
 				},
 				{
-					label: 'Basic Topics',
+					label: "Basic Topics",
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ slug: 'basic_topics/syntax_overview' },
-						{ slug: 'basic_topics/printing' },
-						{ slug: 'basic_topics/variables' },
-						{ slug: 'basic_topics/blocks' },
-						{ slug: 'basic_topics/if_statements' },
-						{ slug: 'basic_topics/loops' },
-						{ slug: 'basic_topics/ranges' },
-						{ slug: 'basic_topics/functions' },
-						{ slug: 'basic_topics/classes' },
-						{ slug: 'basic_topics/multi_source' },
-						{ slug: 'basic_topics/namespaces' },
-						{ slug: 'basic_topics/switch' },
-						{ slug: 'basic_topics/out' },
+						{ slug: "basic_topics/syntax_overview" },
+						{ slug: "basic_topics/printing" },
+						{ slug: "basic_topics/variables" },
+						{ slug: "basic_topics/blocks" },
+						{ slug: "basic_topics/if_statements" },
+						{ slug: "basic_topics/loops" },
+						{ slug: "basic_topics/ranges" },
+						{ slug: "basic_topics/functions" },
+						{ slug: "basic_topics/classes" },
+						{ slug: "basic_topics/multi_source" },
+						{ slug: "basic_topics/namespaces" },
+						{ slug: "basic_topics/switch" },
+						{ slug: "basic_topics/out" },
+					],
+				},
+				{
+					label: "Standard Namespace",
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ slug: "std_namespace/overview" },
+						{ slug: "std_namespace/math" },
 					],
 				},
 			],

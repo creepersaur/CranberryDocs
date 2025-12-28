@@ -1,0 +1,38 @@
+---
+title: Overview
+description: Overview for the Standard Namespace (Std).
+---
+
+In Cranberry, the "Standard Namespace" (`Std`) provides many language features useful for writing applications.
+Some of these features include
+- `Math` - Important Math functions
+- `FS` - file system handling
+- `IO` - terminal input / output
+- `Http` - HTTP requests and server hosting
+- `Env` - Getting environment/application arguments
+- `JSON` - Parsing JSON
+- `Random` - Random numbers
+- `Task` - Timing/waiting and parallelism
+- etc.
+
+All these sub-namespaces belong to the standard namespace. You can access them like so:
+
+```cranberry
+using Std::IO
+using Std::Math
+```
+
+Or you can import multiple of them at the same time:
+
+```cranberry
+using Std::{IO, FS, Random}
+```
+
+**You must import them through Std and then use them without Std.**
+
+```cranberry
+using Std::IO
+
+let input = IO.read_line("enter your name: ")
+print($"Your name is {input}")
+```

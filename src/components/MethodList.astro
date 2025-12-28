@@ -1,0 +1,116 @@
+---
+const { methods, no_icon } = Astro.props;
+import { Icon } from "@astrojs/starlight/components";
+---
+
+<div class="method-list">
+	{
+		methods.map((m: any) => (
+			<div class={`method-row ${m.deprecated ? "deprecated" : ""}`}>
+				<code>
+					{!no_icon && <Icon name="seti:svg" color="#5bf"/>}
+					<span class="method-name">{m.name}</span>(
+					<span class="method-args">
+						{m.args &&
+							m.args.map((arg: string[]) => {
+								return (
+									<>
+										{arg[0]}:
+										<span class="method-type">
+											{arg[1]}
+										</span>
+										<span class="comma">,</span>
+									</>
+								);
+							})}
+					</span>
+					): <span class="method-type">{m.returns}</span>
+				</code>
+				{m.deprecated && <span class="badge">Deprecated</span>}
+			</div>
+		))
+	}
+</div>
+
+<style>
+	.method-list {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid #fff5;
+		border-radius: 8px;
+	}
+
+	.method-row {
+		display: flex;
+		margin-top: 0;
+		align-items: center;
+		gap: 8px;
+		padding: 15px;
+		background: var(--sl-color-bg-inline);
+		font-size: 0.9rem;
+		color: white;
+		transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+
+	.method-row:first-child {
+		border-radius: 7px 7px 0 0;
+	}
+	.method-row:last-child {
+		border-radius: 0 0 7px 7px;
+	}
+
+	.method-row:not(:last-child) {
+		border-bottom: 1px solid #fff5;
+	}
+
+	.method-row code {
+		flex: 1;
+		background: none;
+		padding: 0;
+	}
+
+	.method-row:hover {
+		background: #aaf1;
+	}
+
+	.method-name {
+		color: #739dec;
+	}
+
+	.method-type {
+		color: #ffcb81;
+	}
+
+	.method-type:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	.method-args .comma {
+		opacity: 0.9;
+		margin-left: -10px;
+	}
+
+	.method-args .comma:last-child {
+		display: none;
+	}
+
+	.badge {
+		font-size: 0.7rem;
+		padding: 2px 6px;
+		border-radius: 4px;
+		background: #a33;
+		color: white;
+	}
+
+	.deprecated {
+		opacity: 0.7;
+	}
+
+	svg {
+		display: inline;
+		vertical-align: middle;
+		font-size: 17px;
+		margin-right: 5px;
+	}
+</style>

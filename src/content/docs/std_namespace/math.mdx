@@ -1,0 +1,420 @@
+---
+title: Math
+description: Standard Math library in Cranberry.
+---
+
+import { Icon } from "@astrojs/starlight/components";
+
+import MethodList from "../../../components/MethodList.astro";
+import PropertyList from "../../../components/PropertyList.astro";
+import PropertyTags from "../../../components/PropertyTags.astro";
+
+The `Math` library consists of many math constants and functions that are extremely important
+for things such as games, apps, etc.
+
+Import it into your projects like so:
+
+```cranberry
+using Std::Math
+
+println(Math.abs(-5)) # prints 5
+println(Math.pi) # prints 3.14159...
+```
+
+## Summary
+
+---
+
+### Constants
+
+A few global constants used heavily in mathematics:
+
+<PropertyList
+	methods={[
+		{ name: "pi", type: "number" },
+		{ name: "e", type: "number" },
+		{ name: "tau", type: "number" },
+	]}
+/>
+
+### Methods
+
+The following are mathematic functions. All of them (as of writing) take in numbers as arguments. You can convert
+values to numbers using the `number(value)` built-in function.
+
+<MethodList
+	methods={[
+		{ name: "abs", args: [["x", "number"]], returns: "number" },
+		{ name: "sin", args: [["x", "number"]], returns: "number" },
+		{ name: "cos", args: [["x", "number"]], returns: "number" },
+		{ name: "tan", args: [["x", "number"]], returns: "number" },
+		{ name: "asin", args: [["x", "number"]], returns: "number" },
+		{ name: "acos", args: [["x", "number"]], returns: "number" },
+		{ name: "atan", args: [["x", "number"]], returns: "number" },
+		{ name: "asinh", args: [["x", "number"]], returns: "number" },
+		{ name: "acosh", args: [["x", "number"]], returns: "number" },
+		{ name: "atanh", args: [["x", "number"]], returns: "number" },
+		{
+			name: "atan2",
+			args: [
+				["x", "number"],
+				["y", "number"],
+			],
+			returns: "number",
+		},
+		{ name: "floor", args: [["x", "number"]], returns: "number" },
+		{ name: "ceil", args: [["x", "number"]], returns: "number" },
+		{ name: "round", args: [["x", "number"]], returns: "number" },
+		{
+			name: "pow",
+			args: [
+				["base", "number"],
+				["exponent", "number"],
+			],
+			returns: "number",
+		},
+		{ name: "sqrt", args: [["x", "number"]], returns: "number" },
+		{
+			name: "max",
+			args: [
+				["a", "number"],
+				["b", "number"],
+			],
+			returns: "number",
+		},
+		{
+			name: "min",
+			args: [
+				["a", "number"],
+				["b", "number"],
+			],
+			returns: "number",
+		},
+		{
+			name: "clamp",
+			args: [
+				["value", "number"],
+				["min", "number"],
+				["max", "number"],
+			],
+			returns: "number",
+		},
+	]}
+/>
+
+## Constants
+
+### <Icon name="list-format" color="#f5f" class="inline-icon"/> pi
+
+<PropertyTags tags={["readable"]} />
+
+The ratio of any circle's circumference to its diameter.
+An _irrational_ number that keeps going but never repeats.
+Approximately equal to `3.14159265359`.
+
+```cranberry
+# Area = πr²
+let r = 3
+let area = Math.pi * r * r
+println($"The area of a circle with radius {r} is {area}")
+```
+
+---
+
+### <Icon name="list-format" color="#f5f" class="inline-icon"/> e
+
+<PropertyTags tags={["readable"]} />
+
+The mathematical constant 'e', also known as Euler's number, an _irrational_, _non-repeating decimal_
+fundamental to natural growth, decay, and logarithms (base _e_ or _ln_)
+Approximately equal to `2.718281828459`.
+
+---
+
+### <Icon name="list-format" color="#f5f" class="inline-icon"/> tau
+
+<PropertyTags tags={["readable"]} />
+
+The number tau (τ) is a mathematical constant that is the
+ratio of a circle's circumference to its radius.
+It is approximately equal to `6.2831853` and exactly equal to 2π
+
+---
+
+## Methods
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon"/> abs
+
+Returns the absolute (positive) value of a number.
+Or the positive distance of it from zero.
+Useful for converting negative values to positive ones.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "abs", args: [["x", "number"]], returns: "number" }]}
+/>
+
+```cranberry
+println(Math.abs(-5))
+# prints 5
+```
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon"/> sin
+
+Trigonometric sine of angle `x` in radians. Can be used to create a sin-wave
+or for calculating proper distance based on angles.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "abs", args: [["x", "number"]], returns: "number" }]}
+/>
+
+```cranberry
+Math.sin(x)
+```
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon"/> cos
+
+Returns the cosine of angle x in radians. Useful for trigonometry and calculating distances or projections.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "cos", args: [["x", "number"]], returns: "number" }]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon"/> tan
+
+Returns the tangent of angle x in radians. Useful for slope calculations or angle-based math.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "tan", args: [["x", "number"]], returns: "number" }]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> asin
+
+Returns the inverse sine (arc-sine) of x. The result is in radians.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "asin", args: [["x", "number"]], returns: "number" }]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> acos
+
+Returns the inverse cosine (arc-cosine) of x. Result is in radians.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "acos", args: [["x", "number"]], returns: "number" }]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> atan
+
+Returns the inverse tangent (arc-tangent) of x. Result is in radians.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "atan", args: [["x", "number"]], returns: "number" }]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> asinh
+
+Returns the inverse hyperbolic sine of x.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "asinh", args: [["x", "number"]], returns: "number" }]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> acosh
+
+Returns the inverse hyperbolic cosine of x.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "acosh", args: [["x", "number"]], returns: "number" }]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> atanh
+
+Returns the inverse hyperbolic tangent of x.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "atanh", args: [["x", "number"]], returns: "number" }]}
+/>
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> atan2
+
+Returns the arc-tangent of y / x, considering the signs of both arguments to determine the correct quadrant.
+
+<MethodList
+	no_icon="true"
+	methods={[
+		{
+			name: "atan2",
+			args: [
+				["y", "number"],
+				["x", "number"],
+			],
+			returns: "number",
+		},
+	]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> floor
+
+Rounds x down to the nearest smaller integer.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "floor", args: [["x", "number"]], returns: "number" }]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> ceil
+
+Rounds x up to the nearest larger integer.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "ceil", args: [["x", "number"]], returns: "number" }]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> round
+
+Rounds x to the nearest integer.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "round", args: [["x", "number"]], returns: "number" }]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> exp
+
+Returns e raised to the power of x.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "exp", args: [["x", "number"]], returns: "number" }]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> pow
+
+Raises base to the power of exponent.
+
+<MethodList
+	no_icon="true"
+	methods={[
+		{
+			name: "pow",
+			args: [
+				["base", "number"],
+				["exponent", "number"],
+			],
+			returns: "number",
+		},
+	]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> sqrt
+
+Returns the square root of x.
+
+<MethodList
+	no_icon="true"
+	methods={[{ name: "sqrt", args: [["x", "number"]], returns: "number" }]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> max
+
+Returns the larger of a or b.
+
+<MethodList
+	no_icon="true"
+	methods={[
+		{
+			name: "max",
+			args: [
+				["a", "number"],
+				["b", "number"],
+			],
+			returns: "number",
+		},
+	]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> min
+
+Returns the smaller of a or b.
+
+<MethodList
+	no_icon="true"
+	methods={[
+		{
+			name: "min",
+			args: [
+				["a", "number"],
+				["b", "number"],
+			],
+			returns: "number",
+		},
+	]}
+/>
+
+---
+
+### <Icon name="seti:svg" color="#5bf" class="inline-icon" /> clamp
+
+Clamps value between min and max. Useful for restricting a number to a specific range.
+
+<MethodList
+	no_icon="true"
+	methods={[
+		{
+			name: "clamp",
+			args: [
+				["value", "number"],
+				["min", "number"],
+				["max", "number"],
+			],
+			returns: "number",
+		},
+	]}
+/>
+
+---

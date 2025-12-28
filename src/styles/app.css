@@ -98,3 +98,20 @@ span.astro-g2bywc46 {
 	background: rgb(255, 114, 114);
 	scale: 1.03;
 }
+
+h3 code {
+	font-size: 20px;
+}
+
+.sl-heading-wrapper.level-h3 {
+	margin-top: 10px;
+}
+
+.inline-icon {
+	display: inline;
+	vertical-align: middle;
+}
+
+h3 .inline-icon {
+	margin-right: 10px;
+}
